@@ -26,11 +26,12 @@ def game_display(display): #takes the changing game display and outputs it at di
 
 def game_stage(game,winner,display): #this fucntion determines whether the game is over
     for row in range(len(display)): #the for loop is used to aid in searching for a square
-        for column in range(len(display[row])):           
-            if (display[row][column]==1 and display[row+1][column]==1 and display[row][column+1]==1 and display[row+1][column+1] == 1): #checks to below first, then right and finally diagonally
-                game = "over"
-                winner = "Player 1"
-                break 
+        for column in range(len(display[row])):
+            if column != 5 and row != 5: #ensures the game still works on the egdes
+                if (display[row][column]==1 and display[row+1][column]==1 and display[row][column+1]==1 and display[row+1][column+1] == 1): #checks to below first, then right and finally diagonally
+                    game = "over"
+                    winner = "Player 1"
+                    break 
             
         if game=="over" and winner=="Player 1":
             break #had to use two breaks to escape a nested for loop
