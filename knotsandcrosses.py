@@ -1,4 +1,4 @@
-#a game of knots and crosses, where the player 2 is the computer
+#a game of knots and crosses, where player 2 is the computer
 
 #importing random so I can randomise the computer's placing of it's counter
 import random 
@@ -40,7 +40,7 @@ def game_stage(game,winner,display):
                 winner = "Player 2"
             break;
 
-    #veritical
+    #vertical
     for column in range(len(display[row])):
         if (display[1][column] != "_" and (display[1][column] == display[2][column] == display[3][column])):
             game = "over"
